@@ -6,11 +6,6 @@ setup:
 build:
   languages:
     - java
-    post:
-    - mvn clean package war:war
-release:
-  image: web
-  command: 'mvn clean package war:war'
 run:
   web: >-
     java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --expand-war --port
