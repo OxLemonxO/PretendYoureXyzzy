@@ -61,6 +61,26 @@
           <!-- false = true and true = false... http://jira.codehaus.org/browse/MCOMPILER-209 -->
           <useIncrementalCompilation>false</useIncrementalCompilation>
         </configuration>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals><goal>copy</goal></goals>
+                    <configuration>
+                        <artifactItems>
+                            <artifactItem>
+                                <groupId>com.github.jsimone</groupId>
+                                <artifactId>webapp-runner</artifactId>
+                                <version>7.0.82.0</version>
+                                <destFileName>webapp-runner.jar</destFileName>
+                            </artifactItem>
+                        </artifactItems>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
